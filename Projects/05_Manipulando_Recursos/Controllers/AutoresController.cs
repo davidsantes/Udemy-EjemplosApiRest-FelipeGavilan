@@ -53,6 +53,9 @@ namespace WebAPIAutores.Controllers
             return mapper.Map<List<AutorDTO>>(autores);
         }
 
+        /// <summary>
+        /// Lo recomendable es devolver la URL de dónde se encuentra el recurso
+        /// Se puede utiliza
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] AutorCreacionDTO autorCreacionDTO)
         {
@@ -70,6 +73,11 @@ namespace WebAPIAutores.Controllers
 
             var autorDTO = mapper.Map<AutorDTO>(autor);
 
+            //Buenas prácticas de devolución, indicando en el Response headers:
+            //1. Referencia a cómo llamar al recurso con un get.
+            //2. Identificador del recurso.
+            //3. Recurso que se ha creado.
+            //Retornará un 201: Created
             return CreatedAtRoute("obtenerAutor", new { id = autor.Id }, autorDTO);
         }
 
@@ -105,6 +113,5 @@ namespace WebAPIAutores.Controllers
             await context.SaveChangesAsync();
             return NoContent();
         }
-
     }
 }

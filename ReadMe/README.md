@@ -56,11 +56,11 @@ Ejercicios tomados del curso de **Felipe Gavilán: Construyenco Web APIs RESTful
 	11. Insertando Datos en una Relación Muchos a Muchos
 	12. Usando Include y ThenInclude
 	13. Corrigiendo el Null - Herencia
-	14. Creando Recursos con POST
-	15. Actualizacion Completa de Recursos con PUT
+	14. Creando Recursos con POST (retornando 201 ```CreatedAtRoute```)
+	15. Actualizacion Completa de Recursos con PUT (retornando 204 ```NoContent```)
 	16. Actualizando Libros y sus Autores
-	17. HTTP Patch y JSON Patch
-	18. Actualizando Solo Algunos Campos con HTTP PATCH
+	17. HTTP Patch y JSON Patch: introducción
+    18. HTTP Patch y JSON Patch: actualizando Solo Algunos Campos con HTTP PATCH (uso de ```JsonPatchDocument```)
 	19. Borrando Recursos
 6. **[Configuraciones](#Tema_06_Configuraciones)**
 	1. Introducción a las Configuraciones

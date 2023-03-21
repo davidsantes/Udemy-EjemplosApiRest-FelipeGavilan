@@ -1,10 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using WebAPIAutores.DTOs;
 using WebAPIAutores.Entidades;
 
@@ -12,7 +8,7 @@ namespace WebAPIAutores.Controllers
 {
     [ApiController]
     [Route("api/libros/{libroId:int}/comentarios")]
-    public class ComentariosController: ControllerBase
+    public class ComentariosController : ControllerBase
     {
         private readonly ApplicationDbContext context;
         private readonly IMapper mapper;
@@ -70,6 +66,13 @@ namespace WebAPIAutores.Controllers
 
             var comentarioDTO = mapper.Map<ComentarioDTO>(comentario);
 
+            //Buenas prácticas de devolución, indicando en el Response headers:
+            //1. Referencia a cómo llamar al recurso con un get.
+            //2. Identificadores del recurso:
+            //libroId: [Route("api/libros/{libroId:int}/comentarios")]
+            //id: en el get "ObtenerComentario"
+            //3. Recurso que se ha creado.
+            //Retornará un 201: Created
             return CreatedAtRoute("ObtenerComentario", new { id = comentario.Id, libroId = libroId }, comentarioDTO);
         }
 

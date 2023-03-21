@@ -2,10 +2,6 @@
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using WebAPIAutores.DTOs;
 using WebAPIAutores.Entidades;
 
@@ -13,7 +9,7 @@ namespace WebAPIAutores.Controllers
 {
     [ApiController]
     [Route("api/libros")]
-    public class LibrosController: ControllerBase
+    public class LibrosController : ControllerBase
     {
         private readonly ApplicationDbContext context;
         private readonly IMapper mapper;
@@ -66,6 +62,11 @@ namespace WebAPIAutores.Controllers
 
             var libroDTO = mapper.Map<LibroDTO>(libro);
 
+            //Buenas prácticas de devolución, indicando en el Response headers:
+            //1. Referencia a cómo llamar al recurso con un get.
+            //2. Identificador del recurso.
+            //3. Recurso que se ha creado.
+            //Retornará un 201: Created
             return CreatedAtRoute("ObtenerLibro", new { id = libro.Id }, libroDTO);
         }
 
@@ -98,9 +99,19 @@ namespace WebAPIAutores.Controllers
                     libro.AutoresLibros[i].Orden = i;
                 }
             }
-
         }
 
+        /// <summary>
+        /// Ejemplo de llamada desde Swagger:
+        /*
+           [
+              {
+                "path": "/titulo",
+                "op": "replace",
+                "value": "Titulo desde patch"
+              }
+            ]
+         */
         [HttpPatch("{id:int}")]
         public async Task<ActionResult> Patch(int id, JsonPatchDocument<LibroPatchDTO> patchDocument)
         {
