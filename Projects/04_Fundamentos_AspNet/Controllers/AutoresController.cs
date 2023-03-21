@@ -106,6 +106,7 @@ namespace WebAPIAutores.Controllers
             return autor;
         }
 
+        //Validando desde el Controlador, validando conla la BD
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] Autor autor)
         {

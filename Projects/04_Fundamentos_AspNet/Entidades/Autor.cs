@@ -17,11 +17,13 @@ namespace WebAPIAutores.Entidades
         public string Nombre { get; set; }
         
         //[Range(18, 120)]
-        //[NotMapped]
+        //[NotMapped] //Pruebas que no queremos que acabe en la BDD
         //public int Edad { get; set; }
+
         //[CreditCard]
         //[NotMapped]
         //public string TarjetaDeCredito { get; set; }
+
         //[Url]
         //[NotMapped]
         //public string URL { get; set; }
