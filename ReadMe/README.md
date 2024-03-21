@@ -1,5 +1,5 @@
 # Ejemplos de Web APIs
-Ejercicios tomados del curso de **Felipe Gavilán: Construyenco Web APIs RESTful con ASP.NET Core**, y complementado con apuntes propios.
+Ejercicios tomados del curso de **Felipe Gavilán: Construyendo Web APIs RESTful con ASP.NET Core**, y complementado con apuntes propios.
 
 # Índice completo de contenidos 📋
 2. **[Configurando el ambiente](#Tema_02_Ambiente)**
