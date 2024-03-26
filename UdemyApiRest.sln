@@ -27,7 +27,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12_Api_Con_Suscripciones", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{617485D6-3B31-445F-B8A1-013E147A2C04}"
 	ProjectSection(SolutionItems) = preProject
-		ReadMe\README.md = ReadMe\README.md
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPIAutores", "Projects\02_ConfigurandoAmbiente\WebAPIAutores\WebAPIAutores.csproj", "{8C24CC2A-C5AC-4E72-A0C0-FB418EBCED61}"
